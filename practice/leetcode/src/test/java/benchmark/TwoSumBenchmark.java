@@ -13,7 +13,7 @@ import static solution.TwoSum.twoSum2;
 public class TwoSumBenchmark {
    public static void main(String... args) throws Exception {
       Options opt = new OptionsBuilder()
-          .include(BenchmarkTest.class.getSimpleName())
+          .include(TwoSumBenchmarkTest.class.getSimpleName())
           .timeUnit(TimeUnit.NANOSECONDS) // единицы измерения времени
           .threads(Threads.MAX)           // количество задействованных потоков процессора
           .mode(Mode.AverageTime)         // режим вычисления среднего времени выполнения
@@ -26,7 +26,7 @@ public class TwoSumBenchmark {
       new Runner(opt).run();
    }
 
-   public static class BenchmarkTest {
+   public static class TwoSumBenchmarkTest {
 
       @State(Scope.Benchmark)
       public static class StateVariables {
