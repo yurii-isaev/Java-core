@@ -15,7 +15,7 @@ type Service struct {
 	Authentication
 }
 
-// Return common istance on service authorization inplementation.
+// NewService return common istance on service authorization inplementation
 func NewService(repo *repositories.Repository) *Service {
 	return &Service{
 		Authentication: NewAuthService(repo.AuthCrudRepository),

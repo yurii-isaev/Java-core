@@ -12,6 +12,7 @@ const (
 	userCtx    = "userId"
 )
 
+// Identification handler method
 func (r *Router) userIdentity(c *gin.Context) {
 	// Header check for empty -> 401.
 	header := c.GetHeader(authHeader)

@@ -49,8 +49,8 @@ func generatePasswordHash(password string) string {
 	return fmt.Sprintf("%x", hash.Sum([]byte(salt)))
 }
 
-func (s *AuthService) GenerateToken(username, password string) (string, error) {
-	user, err := s.repository.ReadUser(username, generatePasswordHash(password))
+func (s *AuthService) GenerateToken(email, password string) (string, error) {
+	user, err := s.repository.ReadUser(email, generatePasswordHash(password))
 	if err != nil {
 		return "", err
 	}

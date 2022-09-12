@@ -8,7 +8,7 @@ import (
 	"e-commerce/internal/entities"
 )
 
-// @Summary SignUp
+// SignUp
 // @Tags auth
 // @Description create account
 // @ID create-account
@@ -39,7 +39,7 @@ func (r *Router) SignUp(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-// @Summary SignIn
+// SignIn
 // @Tags auth
 // @Description login
 // @ID login
@@ -61,7 +61,7 @@ func (r *Router) SignIn(c *gin.Context) {
 	}
 
 	// Token generate result check.
-	token, err := r.service.GenerateToken(input.Username, input.Password)
+	token, err := r.service.GenerateToken(input.Email, input.Password)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
