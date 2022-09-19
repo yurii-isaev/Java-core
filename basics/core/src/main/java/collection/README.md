@@ -1,2 +1,2 @@
 # Java Collection Hierarchy
-![CollectionHierarchy](https://github.com/yurii-isaev/Beerhoven/assets/39811288/93e685f5-45b6-463d-9270-8c346e15f169)
+![CollectionHierarchy](https://github.com/yurii-isaev/Java-core/assets/39811288/b841388a-b50e-4675-abdf-c0f5ef7e7859)
