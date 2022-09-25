@@ -1,3 +1,5 @@
+package unsafe;
+
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -23,25 +25,25 @@ public final class UnsafeAccess {
       Collections.shuffle(Arrays.asList(shuffled));
 
       System.out.println("Before GC");
-      printAddresses("ascending", (Object) ascending);
-      printAddresses("descending", (Object) descending);
-      printAddresses("shuffled", (Object) shuffled);
+      printAddress("ascending", ascending);
+      printAddress("descending", descending);
+      printAddress("shuffled", shuffled);
 
       System.gc();
       System.out.println("\nAfter GC");
-      printAddresses("ascending", (Object) ascending);
-      printAddresses("descending", (Object) descending);
-      printAddresses("shuffled", (Object) shuffled);
+      printAddress("ascending", ascending);
+      printAddress("descending", descending);
+      printAddress("shuffled", shuffled);
 
       System.gc();
       System.out.println("\nAfter GC 2");
-      printAddresses("ascending", (Object) ascending);
-      printAddresses("descending", (Object) descending);
-      printAddresses("shuffled", (Object) shuffled);
+      printAddress("ascending", ascending);
+      printAddress("descending", descending);
+      printAddress("shuffled", shuffled);
    }
 
-   public static void printAddresses(String label, Object... objects) {
-      System.out.print(label + ": 0x");
+   public static void printAddress(Object... objects) {
+      System.out.print("0x");
       long last = 0;
       int offset = unsafe.arrayBaseOffset(objects.getClass());
       int scale = unsafe.arrayIndexScale(objects.getClass());

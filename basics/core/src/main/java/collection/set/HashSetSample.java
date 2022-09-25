@@ -119,8 +119,8 @@ public class HashSetSample {
       System.out.print(set3.contains(8)); // true
       System.out.println("\n");
 
-      Integer[] array = set3.toArray(new Integer[set3.size()]);
       // Access elements of an array using index
+      Integer[] array = set3.toArray(new Integer[set3.size()]);
       for (int i = 0; i < array.length; i++) {
          System.out.println("Element at index " + i + " is:" + array[i]);
       }
@@ -128,7 +128,7 @@ public class HashSetSample {
       System.out.println(desiredIndex); // 7
       System.out.println();
 
-      // iterate the HashSet
+      // Access elements of an array using iterator
       desiredIndex = 2;
       int currentIndex = 0;
       Iterator<Integer> iterator = set3.iterator();

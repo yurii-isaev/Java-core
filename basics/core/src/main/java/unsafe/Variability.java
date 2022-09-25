@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertArrayEquals;
+package unsafe;
 
 public class Variability {
 
@@ -7,10 +7,10 @@ public class Variability {
       String s = "hello";
       String g = s;
 
-      UnsafeAccess.printAddresses("Address", s); // 0x440b32a40
-      UnsafeAccess.printAddresses("Address", g); // 0x440b32a40
+      UnsafeAccess.printAddress(s); // 0x440b32a40
+      UnsafeAccess.printAddress(g); // 0x440b32a40
       s = "goodbye";
-      UnsafeAccess.printAddresses("Address", s); // 0x440b6f300
+      UnsafeAccess.printAddress(s); // 0x440b6f300
    }
 
    // Изменяемость объектов
