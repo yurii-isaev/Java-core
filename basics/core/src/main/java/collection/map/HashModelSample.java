@@ -4,7 +4,6 @@ import unsafe.UnsafeAccess;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * HashMap, HashSet полагаются на методы equals(Object o) и hashCode()
@@ -17,6 +16,9 @@ import java.util.Objects;
  * то они будут равны пока их свойства остаются неизменными.
  * Сравнение null - объект должен быть проверен на null.
  * Если объект равен null, то метод должен вернуть false, а не NullPointerException.
+ * <p/>
+ * Если разные по equals объекты имеют одинаковый hashCode, то они складываются в одну ячейку
+ * и там образуется LinkedList из полдобных объектов.
  */
 
 public class HashModelSample {
@@ -26,19 +28,6 @@ public class HashModelSample {
    public HashModelSample(String name, String lastname) {
       this.name = name;
       this.lastname = lastname;
-   }
-
-   @Override
-   public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      HashModelSample that = (HashModelSample) o;
-      return name.equals(that.name) && lastname.equals(that.lastname);
-   }
-
-   @Override
-   public int hashCode() {
-      return Objects.hash(name, lastname);
    }
 
    public static void main(String[] args) {
@@ -64,18 +53,23 @@ public class HashModelSample {
       System.out.println(System.identityHashCode(model2)); // 885284298
       UnsafeAccess.printAddress(model2);                   // 0x440b70c40
 
-      Map<String, Integer> nums = new HashMap<>();
-      nums.put("3", 100);
-      nums.put("3", 100);
-     // System.out.println(nums.containsKey(28).hashCode());
-      nums.forEach((key, value) -> System.out.printf("Key: %s -> %s \n", key.hashCode(), value));
+      Map<Integer, Integer> nums = new HashMap<>();
+      nums.put(3, 3);
+      nums.put(3, 3);
+      nums.put(4, 3);
+      nums.forEach((k, v) -> System.out.printf("nums: %s -> %s \n", k.hashCode(), v.hashCode()));
+      // nums: 3 -> 3
+      // nums: 4 -> 3
 
-//      for(String key: nums.keySet()) {
-//         if(nums.get(key).equals(100)) {
-//            System.out.println(key);
-//            System.out.println(nums.keySet().hashCode());
-//         }
-//      }
+      Map<String, String> rows = new HashMap<>();
+      rows.put("3", "3");
+      rows.put("3", "3");
+      rows.put("4", "3");
+      rows.forEach((k, v) -> System.out.printf("rows: %s -> %s \n", k.hashCode(), v.hashCode()));
+      // rows: 51 -> 51
+      // rows: 52 -> 51
 
+      // Перебор c помощью entry
+      rows.entrySet().forEach(e -> System.out.println(e.getKey().hashCode()));
    }
 }
