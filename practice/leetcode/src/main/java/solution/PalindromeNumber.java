@@ -2,6 +2,7 @@ package solution;
 
 /**
  * 9. Palindrome Number (<a href="https://leetcode.com/problems/palindrome-number/description/">...</a>):
+ * <p>
  * Given an integer x, return true if x is a palindrome, and false otherwise.
  * <p>
  * Example 1:
@@ -22,7 +23,6 @@ package solution;
  */
 
 public class PalindromeNumber {
-
    public static void main(String[] args) {
       System.out.println(isPalindrome1(10));
       System.out.println(isPalindrome2(10));

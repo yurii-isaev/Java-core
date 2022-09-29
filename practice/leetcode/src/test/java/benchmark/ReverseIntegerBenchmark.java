@@ -7,13 +7,12 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-import static solution.PalindromeNumber.*;
+import static solution.ReverseInteger.*;
 
-public class PalindromeNumberBenchmark {
-
-   public static void main(String... args) throws Exception {
+public class ReverseIntegerBenchmark {
+   public static void main(String[] args) throws Exception {
       Options opt = new OptionsBuilder()
-          .include(PalindromeNumberBenchmarkTest.class.getSimpleName())
+          .include(ReverseIntegerBenchmark.ReverseIntegerBenchmarkTest.class.getSimpleName())
           .timeUnit(TimeUnit.NANOSECONDS)
           .threads(Threads.MAX)
           .mode(Mode.AverageTime)
@@ -24,7 +23,7 @@ public class PalindromeNumberBenchmark {
       new Runner(opt).run();
    }
 
-   public static class PalindromeNumberBenchmarkTest {
+   public static class ReverseIntegerBenchmarkTest {
 
       @State(Scope.Benchmark)
       public static class StateVariables {
@@ -33,23 +32,23 @@ public class PalindromeNumberBenchmark {
       }
 
       @Benchmark
-      public boolean solution1(StateVariables state) {
-         return isPalindrome1(state.nums1);
+      public int solution1(StateVariables state) {
+         return reverse1(state.nums1);
       }
 
       @Benchmark
-      public boolean solution2(StateVariables state) {
-         return isPalindrome1(state.nums2);
+      public int solution2(StateVariables state) {
+         return reverse1(state.nums2);
       }
 
       @Benchmark
-      public boolean solution3(StateVariables state) {
-         return isPalindrome2(state.nums1);
+      public int solution3(StateVariables state) {
+         return reverse2(state.nums1);
       }
 
       @Benchmark
-      public boolean solution4(StateVariables state) {
-         return isPalindrome2(state.nums2);
+      public int solution4(StateVariables state) {
+         return reverse2(state.nums2);
       }
    }
 }
