@@ -11,28 +11,25 @@ import java.nio.file.Files;
  */
 
 public class CopyFile {
-   private boolean copy() {
-      File file = new File("C:/Users/Shved/Desktop/test/test_1.txt");
-      File target = new File("C:/Users/Shved/Desktop/test/target_1.txt");
+   static final File file = new File("/Users/Shved/Desktop/test/test_1.txt");
+   static final File target = new File("/Users/Shved/Desktop/test/target_1.txt");
+
+   private void copy() {
       try {
          Files.copy(file.toPath(), target.toPath());
          System.out.println("File coped is successfully");
       } catch (IOException e) {
          System.out.println("File target_1.txt already exist");
       }
-      return false;
    }
 
-   private boolean cut() {
-      File file = new File("C:/Users/Shved/Desktop/test/test_1.txt");
-      File target = new File("C:/Users/Shved/Desktop/test/target_2.txt");
+   private void cut() {
       try {
          Files.move(file.toPath(), target.toPath());
          System.out.println("File cut is successfully");
       } catch (IOException e) {
          System.out.println("File target_2.txt already exist");
       }
-      return false;
    }
 
    public static void main(String[] args) {
