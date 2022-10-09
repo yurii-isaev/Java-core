@@ -41,7 +41,7 @@ public class Variation {
       // citrusList = orangeList; // -> запрещено, поскольку обощенные классы являются инвариантными типами
    }
 
-   // Инариантность типов
+   // Инвариантность типов
    // Получаемый список в парметре для записи объекта и наследников и для чтения объекта и его предков
    private static void getFruits(List<Citrus> oranges) {
       for (int i = 0; i < oranges.size(); i++) {
