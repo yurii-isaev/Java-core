@@ -12,10 +12,10 @@ import java.io.Serializable;
  */
 
 class Person implements Serializable {
-   private String name;
-   private int age;
-   private double height;
-   private transient boolean married;
+   private final String name;
+   private final int age;
+   private final double height;
+   private final transient boolean married;
 
    Person(String n, int a, double h, boolean m) {
       name = n;
