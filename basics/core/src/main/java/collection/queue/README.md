@@ -1,4 +1,4 @@
 # Java Queue Hierarchy
-![QueueHierarchy](https://github.com/yurii-isaev/Java-core/assets/39811288/9351c2e5-88c7-49bc-adf7-d656234ff43d)
+![queue_hierarchy](https://github.com/yurii-isaev/Java-core/assets/39811288/bc653773-7518-44d1-ba36-a158714d72be)
 
-![QueueDifference](https://github.com/yurii-isaev/Java-core/assets/39811288/24a3cd0f-5c4c-4a3a-bc79-13c16ff19ca5)
+![queue_difference](https://github.com/yurii-isaev/Java-core/assets/39811288/27b18745-8c28-4506-bccf-14ae4f8c9c24)

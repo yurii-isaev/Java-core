@@ -1,4 +1,4 @@
 # HashMap Internal Structure
-![HashMapStructure](https://github.com/yurii-isaev/Java-core/assets/39811288/7c791f42-4d11-4cca-98ed-4856b7ceee27)
-![HashCode](https://github.com/yurii-isaev/Java-core/assets/39811288/43abf4fe-152b-4e3d-b090-b9b851164a58)
-![HashMapKeys](https://github.com/yurii-isaev/Java-core/assets/39811288/05aa1c7a-37d4-4771-ac9a-eccb06ceba70)
+![hash_map_structure](https://github.com/yurii-isaev/Java-core/assets/39811288/d1cb691a-2c53-4da2-9152-1f2adec96d1d)
+![hash_code](https://github.com/yurii-isaev/Java-core/assets/39811288/7d17b8a3-43ba-4299-b2d8-e3804928b735)
+![hash_map_keys](https://github.com/yurii-isaev/Java-core/assets/39811288/c246d062-ce73-43b9-8deb-053ef81d3924)

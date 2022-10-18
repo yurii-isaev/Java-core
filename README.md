@@ -1,2 +1,2 @@
 # Java architecture jvm
-![java-architecture-jvm](https://github.com/yurii-isaev/Java-core/assets/39811288/934bd261-3466-4145-8211-a3b8eb0f8422)
+![java_architecture_jvm](https://github.com/yurii-isaev/Java-core/assets/39811288/67c36da3-7f46-4913-b92a-e039e52f36b1)
