@@ -12,6 +12,7 @@
     <modules>
         <module>practice/leetcode</module>
         <module>basics/core</module>
+        <module>patterns</module>
     </modules>
 
     <dependencies>
