@@ -1,23 +1,20 @@
 package stream;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
+import java.util.stream.*;
 
 import static java.lang.System.out;
 
 /**
  * Java Stream API предлагает два вида методов:
- * 1. Конвейрные (промежуточные) - возвращают другой stream, т.е. трансформуруют текущей поток;
- * 2. Терминальные - возвращают конкретный результат: примитив, объектб, коллекция и т.д.
+ * 1. Преобразование данных в поток;
+ * 2. Конвейрные (промежуточные) методы - возвращают другой stream, т.е. трансформуруют текущей поток;
+ * 3. Терминальные методы - возвращают конкретный результат: примитив, объект, коллекция и т.д.
  */
 
-public class StreamSample {
+public class Main {
    public static void main(String[] args) {
-      long res = Stream
-          .of("a1", "a2", "a3")
+      long res = Stream.of("a1", "a2", "a3")
           .filter(a -> a.equals("a1"))
           .count();
       out.println(res); // 1
@@ -88,9 +85,9 @@ public class StreamSample {
 
       // Отсортировать список по возрасту и по имени
       peopleList.stream()
-          .sorted(Comparator.comparing(People::getName))
+          .sorted(Comparator.comparing(people -> people.getName()))
           .sorted(Comparator.comparingInt(People::getAge))
-          .forEach(out::println);
+          .forEach(x -> out.println(x));
       //People{name='Vanya', age=16, gender=MAN}
       //People{name='Vasya', age=16, gender=MAN}
       //People{name='Olga',  age=18, gender=WOMAN}
@@ -98,5 +95,36 @@ public class StreamSample {
       //People{name='Ivan',  age=29, gender=MAN}
       //People{name='Maria', age=41, gender=WOMAN}
       //People{name='Elena', age=50, gender=WOMAN}
+
+      // Найти наименьший элемент массива
+      Optional<Integer> optional = Stream.of(1, 2, 3, 4, 5)
+          .reduce(Math::min);
+      out.printf(optional.get().toString() + "\n");
+      // 1
+
+      List<List<String>> arr = Arrays.asList(Arrays.asList("One"), Arrays.asList("Two"));
+      out.println(arr);
+      // [[One], [Two]]
+
+      arr.stream()
+          .flatMap(Collection::stream)
+          .forEach(out::println);
+      // One Two
+
+      Stream.of(Stream.of(1), Stream.of(2))
+          .forEach(out::println);
+      // java.util.stream.ReferencePipeline$Head@6d5380c2
+      // java.util.stream.ReferencePipeline$Head@45ff54e6
+
+      // Асинхронный вывод массива
+      Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+          .parallel()
+          .forEach(out::print);
+      // 658973241
+
+      Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+          .parallel()
+          .forEachOrdered(out::print);
+      // 123456789
    }
 }
