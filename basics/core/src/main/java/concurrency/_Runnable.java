@@ -2,7 +2,7 @@ package concurrency;
 
 public class _Runnable implements Runnable {
 
-   private String name;
+   private final String name;
 
    public _Runnable(String name) {
       this.name = name;
