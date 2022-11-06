@@ -1,4 +1,4 @@
-package concurrency.threadpool;
+package concurrency.deadlock;
 
 public class DeadLock {
    static class Friend {
