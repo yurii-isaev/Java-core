@@ -1,4 +1,4 @@
-package concurrency;
+package approach;
 
 public class _Runnable implements Runnable {
 

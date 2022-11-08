@@ -1,4 +1,4 @@
-package concurrency;
+package approach;
 
 /**
  * По умолчанию именем главного потока будет main.

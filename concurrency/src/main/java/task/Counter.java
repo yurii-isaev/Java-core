@@ -1,4 +1,4 @@
-package concurrency.task;
+package task;
 
 /**
  * Задание:

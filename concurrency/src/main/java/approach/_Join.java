@@ -1,4 +1,4 @@
-package concurrency;
+package approach;
 
 public class _Join extends Thread {
 

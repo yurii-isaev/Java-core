@@ -13,6 +13,7 @@
         <module>practice/leetcode</module>
         <module>basics/core</module>
         <module>patterns</module>
+        <module>concurrency</module>
     </modules>
 
     <dependencies>

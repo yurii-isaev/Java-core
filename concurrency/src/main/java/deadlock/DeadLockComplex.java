@@ -1,4 +1,4 @@
-package concurrency.deadlock;
+package deadlock;
 
 import java.util.*;
 import java.util.concurrent.*;
