@@ -6,7 +6,7 @@ package task;
  * 2. Создать и запустить два потока и перебрать цыкл из 20 элементов;
  */
 
-public class Counter implements Runnable{
+public class Counter1 implements Runnable{
    private int count;
    private static int globalCount;
 
@@ -29,8 +29,8 @@ public class Counter implements Runnable{
    }
 
    public static void main(String[] args) {
-      new Thread(new Counter()).start();
-      new Thread(new Counter()).start();
-      new Thread(new Counter()).start();
+      new Thread(new Counter1()).start();
+      new Thread(new Counter1()).start();
+      new Thread(new Counter1()).start();
    }
 }
