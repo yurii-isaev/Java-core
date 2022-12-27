@@ -4,11 +4,11 @@ public class VectorAdapterFromRaster extends RasterGraphics implements VectorGra
 
    @Override
    public void drawLine() {
-      drawRasterLine();
+      super.drawRasterLine();
    }
 
    @Override
    public void drawSquare() {
-      drawRasterSquare();
+      super.drawRasterSquare();
    }
 }

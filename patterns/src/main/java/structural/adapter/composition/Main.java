@@ -7,5 +7,10 @@ public class Main {
       VectorGraphicsInterface graphic = new VectorAdapterFromRaster(new RasterGraphics());
       graphic.drawLine();
       graphic.drawSquare();
+
+      /*
+      Draw a line
+      Draw a square
+      */
    }
 }
