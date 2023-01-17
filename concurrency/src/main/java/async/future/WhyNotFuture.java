@@ -76,13 +76,13 @@ public class WhyNotFuture {
       executor.shutdown();
 
       /*
-     Thread: main
-     Delay: main
-     Start task: pool-1-thread-1
-     End task: pool-1-thread-1
-     After delay: main
-     Submit from main
-     [1, 2, 3, 4]
+      Thread: main
+      Delay: main
+      Start task: pool-1-thread-1
+      End task: pool-1-thread-1
+      After delay: main
+      Submit from main
+      [1, 2, 3, 4]
        */
    }
 
@@ -101,6 +101,7 @@ public class WhyNotFuture {
       System.out.println("Thread: " + Thread.currentThread().getName());
       AtomicReference<List<Integer>> list = new AtomicReference<>();
 
+      // supply async task
       Runnable task = () -> {
          System.out.printf("Start task: %s\n", Thread.currentThread().getName());
          delay(5);
