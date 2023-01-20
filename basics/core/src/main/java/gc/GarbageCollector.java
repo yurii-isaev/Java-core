@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
+package gc;
 
-import static java.lang.System.out;
+import java.util.*;
 
 /**
  * -Xms<size> - начальный размер кучи
@@ -42,16 +41,16 @@ public class GarbageCollector {
 
    }
    private static void printMemory() {
-      out.println("Max mem: " + Runtime.getRuntime().maxMemory() / 1048576);
-      out.println("Total mem: " + Runtime.getRuntime().totalMemory() / 1048576);
-      out.println("Free available mem: " + Runtime.getRuntime().freeMemory() / 1048576);
+      System.out.println("Max mem: " + Runtime.getRuntime().maxMemory() / 1048576);
+      System.out.println("Total mem: " + Runtime.getRuntime().totalMemory() / 1048576);
+      System.out.println("Free available mem: " + Runtime.getRuntime().freeMemory() / 1048576);
 
       long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-      out.println("Used mem: " + usedMemory / 1048576);
+      System.out.println("Used mem: " + usedMemory / 1048576);
 
       long freeMemory = Runtime.getRuntime().maxMemory() - usedMemory;
-      out.println("Free mem: " + freeMemory / 1048576);
+      System.out.println("Free mem: " + freeMemory / 1048576);
 
-      out.println("___________________________________________");
+      System.out.println("___________________________________________");
    }
 }
