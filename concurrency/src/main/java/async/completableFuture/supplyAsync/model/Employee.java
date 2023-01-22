@@ -1,4 +1,4 @@
-package async.completableFuture.supplyAsyn;
+package async.completableFuture.supplyAsync.model;
 
 import lombok.*;
 

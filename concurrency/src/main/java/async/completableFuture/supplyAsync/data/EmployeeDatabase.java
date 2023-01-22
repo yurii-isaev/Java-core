@@ -1,6 +1,7 @@
-package async.completableFuture.supplyAsyn.data;
+package async.completableFuture.supplyAsync.data;
 
-import async.completableFuture.supplyAsyn.*;
+import async.completableFuture.supplyAsync.*;
+import async.completableFuture.supplyAsync.model.Employee;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

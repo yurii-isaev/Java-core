@@ -1,6 +1,7 @@
-package async.completableFuture.supplyAsyn;
+package async.completableFuture.supplyAsync;
 
-import async.completableFuture.supplyAsyn.data.EmployeeDatabase;
+import async.completableFuture.supplyAsync.data.EmployeeDatabase;
+import async.completableFuture.supplyAsync.model.Employee;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -19,6 +20,7 @@ public class SupplyAsyncDemo {
       return list.get();
    }
 
+   // выведет весь список сотрудников в консоль
    public static void main(String[] args) throws ExecutionException, InterruptedException {
       List<Employee> employees = getEmployees();
       employees.forEach(System.out::println);

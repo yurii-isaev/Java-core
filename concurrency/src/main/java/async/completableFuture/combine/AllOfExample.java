@@ -3,11 +3,11 @@ package async.completableFuture.combine;
 import java.util.concurrent.*;
 
 /**
- * CompletableFuture.allOf() - это статический метод класса CompletableFuture,
- * который позволяет объединить несколько CompletableFuture в один CompletableFuture,
- * который завершится, когда все исходные CompletableFuture завершатся.
+ * Метод allOf принимает массив CompletableFuture и возвращает новый CompletableFuture,
+ * который завершается, когда все переданные CompletableFuture завершаются.
+ * Результатом этого нового CompletableFuture будет массив результатов завершившихся CompletableFuture.
  */
-public class AnyAllOfExample {
+public class AllOfExample {
 
    public static void delay(int seconds) {
       try {
@@ -26,14 +26,16 @@ public class AnyAllOfExample {
    }
 
    public static CompletableFuture<Double> future2() {
-      return CompletableFuture.supplyAsync(() -> {
-         System.out.println("future2 - " + Thread.currentThread().getName());
-         delay(2);
-         if (true) throw new RuntimeException("I am runtime error");
-         return 1.23d;
-      }).exceptionally(throwable -> {
-         System.out.println("Error " + throwable.getMessage());
-         return Double.NaN;
+      return CompletableFuture
+          .supplyAsync(() -> {
+             System.out.println("future2 - " + Thread.currentThread().getName());
+             delay(2);
+             if (true) throw new RuntimeException("I am runtime error");
+             return 1.23d;
+          })
+          .exceptionally(throwable -> {
+             System.out.println("Error " + throwable.getMessage());
+             return Double.NaN;
       });
    }
 

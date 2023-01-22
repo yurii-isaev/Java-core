@@ -1,5 +1,6 @@
-package async.completableFuture.supplyAsyn;
+package async.completableFuture.supplyAsync;
 
+import async.completableFuture.supplyAsync.model.Employee;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,7 +11,7 @@ import java.util.concurrent.*;
 public class RunAsyncDemo {
 
    public static final String FILE_SRC = "/Users/Shved/Documents/Projects/Java-core" +
-       "/concurrency/src/main/java/async/future/employees.json";
+       "/concurrency/src/main/java/async/completableFuture/supplyAsync/data/employees.json";
 
    public static Void saveEmployees(File jsonFile) throws ExecutionException, InterruptedException {
       ObjectMapper mapper = new ObjectMapper();
@@ -55,5 +56,12 @@ public class RunAsyncDemo {
    public static void main(String[] args) throws ExecutionException, InterruptedException {
       saveEmployees(new File(FILE_SRC));
       saveEmployeesWithPoll(new File(FILE_SRC));
+
+      /*
+      Thread : ForkJoinPool.commonPool-worker-1
+      1000
+      Thread : pool-1-thread-1
+      1000
+       */
    }
 }
