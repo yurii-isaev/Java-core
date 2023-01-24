@@ -2,8 +2,7 @@ package benchmark;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +10,7 @@ import static solution.PalindromeNumber.*;
 
 public class PalindromeNumberBenchmark {
 
-   public static void main(String... args) throws Exception {
+   public static void main(String[] args) throws Exception {
       Options opt = new OptionsBuilder()
           .include(PalindromeNumberBenchmarkTest.class.getSimpleName())
           .timeUnit(TimeUnit.NANOSECONDS)

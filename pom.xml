@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>practice/leetcode</module>
+        <module>algorithms/leetcode</module>
         <module>basics/core</module>
         <module>patterns</module>
         <module>concurrency</module>
